@@ -1,0 +1,66 @@
+.player__home {
+    height: calc(100vh - 90px);
+    background: linear-gradient(var(--primary-color), rgba(0, 0, 0, .9));
+    width: calc(100% - 230px);
+    padding: 30px;
+    overflow-y: scroll;
+}
+
+.player__home::-webkit-scrollbar {
+    color: transparent;
+    width: 7px;
+}
+
+.player__home::-webkit-scrollbar-thumb {
+    background-color: #bababa;
+    border-radius: 60px;
+}
+
+.home__info {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    color: white;
+}
+
+.home__info img {
+    height: 20vh;
+    object-fit: cover;
+    min-height: 190px;
+    margin: 0 20px;
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+    width: 250px;
+}
+
+.home__info-text {
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.home__info-text h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.home__info-text p {
+    font-size: 14px;
+}
+
+.home__songs {
+    color: white;
+}
+
+.home__icons {
+    padding: 10px 30px;
+}
+
+.home__icons .MuiSvgIcon-root {
+    font-size: 40px;
+    margin: 10px 10px
+}
+
+.home__icons .MuiSvgIcon-root:hover {
+    transition: all 0.1s ease-in;
+    transform: scale(1.08);
+    cursor: pointer;
+}

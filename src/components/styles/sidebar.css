@@ -1,0 +1,58 @@
+.player__sidebar{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 90px);
+    width: 20%;
+    background-color: #040404;
+    width: 230px;
+    color: white;
+    padding: 1rem;
+}
+
+.player__sidebar .active {
+    color: white;
+}
+
+.player__logo {
+    height: 65px;
+    margin-right: auto;
+    padding: 10px;
+    padding-left: 15px;
+    margin-bottom: 1rem;
+}
+
+.sidebar__title {
+    font-size: 12px;
+    margin-bottom: 0.3rem;
+    margin-left: 5px;
+    letter-spacing: .6px;
+    color: rgba(128, 128, 128, 0.7);
+}
+
+.player__sidebar hr{
+    border-color: rgba(128, 128, 128, 0.7);
+}
+
+.navigation-btn {
+    margin-bottom: 1.3rem;
+}
+
+.playlist {
+    margin-top: 0.7rem;
+    overflow-y: scroll;
+}
+
+.playlist::-webkit-scrollbar{
+    background-color: transparent;
+    width: 6px;
+}
+.playlist::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 40px;
+}
+
+.playlist .sidebar-option {
+    margin-bottom: 0;
+    height: fit-content;
+    padding-top:5px;
+}
