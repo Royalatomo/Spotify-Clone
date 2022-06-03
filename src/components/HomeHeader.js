@@ -3,6 +3,7 @@ import "./styles/home-header.css";
 import { Search } from "@material-ui/icons";
 import { Avatar } from "@material-ui/core";
 import { useSelector } from "react-redux";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const HomeHeader = ({ spotify }) => {
   const user = useSelector((state) => state.user?.info);
@@ -21,6 +22,11 @@ const HomeHeader = ({ spotify }) => {
     return slicedName + "...";
   };
 
+  const logoutUser = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
+
   return (
     <div className="home__header">
       <div className="header__left">
@@ -30,10 +36,17 @@ const HomeHeader = ({ spotify }) => {
           placeholder="Search for Artists, Songs or Albums..."
         />
       </div>
-
       <div className="header__right">
-        <Avatar src={getImage()} alt="" />
-        <h4>{getName()}</h4>
+        <div className="profile__info">
+          <Avatar src={getImage()} alt="" />
+          <h4>
+            {getName()} <KeyboardArrowDownIcon />
+          </h4>
+        </div>
+
+        <div className="profile__dropdown">
+          <button onClick={logoutUser}>Logout</button>
+        </div>
       </div>
     </div>
   );

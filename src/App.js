@@ -27,7 +27,6 @@ const App = () => {
       });
 
       spotify.getUserPlaylists().then((playlist) => {
-        console.log(playlist)
         dispatch(updatePlaylist({ playlist }));
       });
 
@@ -52,7 +51,6 @@ const App = () => {
 
     spotify.getPlaylist("37i9dQZF1DXbYM3nMM0oPk").then((songs) => {
       dispatch(updateCurrentList({ currentList: songs }));
-      console.log(songs);
     });
 
     // eslint-disable-next-line

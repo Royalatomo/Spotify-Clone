@@ -1,19 +1,25 @@
+.color-banner {
+    background: linear-gradient(var(--primary-color), rgba(0, 0, 0, .9));
+    padding: 30px;
+    height: fit-content;
+    min-width: fit-content;
+}
+
 .player__home {
     height: calc(100vh - 90px);
-    background: linear-gradient(var(--primary-color), rgba(0, 0, 0, .9));
     width: calc(100% - 230px);
-    padding: 30px;
     overflow-y: scroll;
+    display: grid;
 }
 
 .player__home::-webkit-scrollbar {
-    color: transparent;
+    background-color: rgba(0, 0, 0, .1);
     width: 7px;
 }
 
 .player__home::-webkit-scrollbar-thumb {
-    background-color: #bababa;
-    border-radius: 60px;
+    background-color: black;
+    /* border-radius: 60px; */
 }
 
 .home__info {
@@ -24,17 +30,21 @@
 }
 
 .home__info img {
-    height: 20vh;
+    height: 40vh;
     object-fit: cover;
     min-height: 190px;
     margin: 0 20px;
     box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
-    width: 250px;
+    max-width: 300px;
 }
 
 .home__info-text {
     flex: 1;
     margin-left: 1rem;
+}
+
+.nothing-text {
+    margin: 40px;
 }
 
 .home__info-text h2 {
@@ -48,6 +58,9 @@
 
 .home__songs {
     color: white;
+    background-color: rgba(0, 0, 0, .9);
+    min-height: 30vh;
+    height: fit-content;
 }
 
 .home__icons {

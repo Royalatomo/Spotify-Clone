@@ -8,8 +8,13 @@
     overflow: hidden;
 }
 
+.song-row h4 {
+    color: rgb(169, 169, 169);
+}
+
 .song-row img {
     height: 60px;
+    margin-left: 10px;
 }
 
 .song-row:hover{

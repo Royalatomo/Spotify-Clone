@@ -6,11 +6,6 @@ const userSlice = createSlice({
     info: "",
     playlist: "",
     currentList: "",
-    currentPlaying: {
-      img: "https://i.scdn.co/image/ab67616d00001e02925b6102fc5edac08ec995b5",
-      name: "Little Do You Know",
-      artists: ["Alex & Sierra"]
-    },
   },
   reducers: {
     updateInfo: (state, action) => {
@@ -25,18 +20,12 @@ const userSlice = createSlice({
       state.currentList = action.payload.currentList;
       return state;
     },
-
-    updateCurrentPlaying: (state, action) => {
-      state.currentPlaying = action.payload.currentPlaying;
-      return state;
-    },
   },
 });
 
 export const {
   updateInfo,
   updatePlaylist,
-  updateCurrentList,
-  updateCurrentPlaying,
+  updateCurrentList
 } = userSlice.actions;
 export default userSlice.reducer;

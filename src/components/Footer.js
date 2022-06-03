@@ -8,31 +8,39 @@ import { Repeat } from "@material-ui/icons";
 import { Grid, Slider } from "@material-ui/core";
 import { PlaylistPlay } from "@material-ui/icons";
 import { VolumeDown } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { PauseCircleOutline } from "@material-ui/icons";
+import { updateTrack } from "../app/slice/playerSlice";
 
 const Footer = () => {
-  const userSong = useSelector((state) => state.user?.currentPlaying);
+  const dispatch = useDispatch();
+
+  const player = useSelector((state) => state.player);
+
+  const tooglePlay = () => {
+    dispatch(updateTrack({ playing: !player.playing }));
+  };
 
   const getName = () => {
-    if (!userSong || !userSong.name) return;
-    const name = userSong.name;
+    if (!player.info || !player.info.name) return;
+    const name = player.info.name;
     const slicedName = name.slice(0, 30);
     if (name.length === slicedName.length) return slicedName;
     return slicedName + "...";
-  }
+  };
 
   const getArtists = () => {
-    if (!userSong || !userSong.artists) return;
-    const name = userSong.artists.join(", ");
+    if (!player.info || !player.info.artists) return;
+    const name = player.info.artists.join(", ");
     const slicedName = name.slice(0, 30);
     if (name.length === slicedName.length) return slicedName;
     return slicedName + "...";
-  }
+  };
 
   return (
     <div className="player__footer">
       <div className="footer__left">
-        <img className="footer__album-logo" src={userSong.img} alt="" />
+        <img className="footer__album-logo" src={player.info.img} alt="" />
         <div className="footer__song-info">
           <h4>{getName()}</h4>
           <p>{getArtists()}</p>
@@ -42,7 +50,18 @@ const Footer = () => {
       <div className="footer__center">
         <Shuffle className="footer__green" />
         <SkipPrevious className="footer__icon" />
-        <PlayCircleOutline className="footer__icon footer__icon--center" />
+        {player.playing ? (
+          <PauseCircleOutline
+            onClick={tooglePlay}
+            className="footer__icon footer__icon--center"
+          />
+        ) : (
+          <PlayCircleOutline
+            onClick={tooglePlay}
+            className="footer__icon footer__icon--center"
+          />
+        )}
+
         <SkipNext className="footer__icon" />
         <Repeat className="footer__green" />
       </div>

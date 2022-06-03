@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles/login.css";
 import { loginUrl } from "../spotify";
 
 const Login = () => {
+  useEffect(() => {
+    document.title = "Spotify - Login";
+  }, []);
   return (
     <div className="login">
       <div className="logo">
