@@ -1,5 +1,6 @@
 const authEndPoint = "https://accounts.spotify.com/authorize";
-const redirectUrl = "http://localhost:3000";
+// const redirectUrl = "http://localhost:3000";
+const redirectUrl = "https://spotify-clone-mocha-three.vercel.app/";
 // const redirectUrl = "http://192.168.1.3:3000";
 
 const clientId = "3556c36c01da46ecb72c4c35965c51d2";
